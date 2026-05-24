@@ -1,25 +1,27 @@
-#- name:
-#  photo: rock.jpg
-#  info:
-#  email:
-#  number_educ:
-#  education1:
-#  education2:
-#  education3:
-#  education4:
-
-- name: Ilse Kuijf 
+- name: Yichen Jiang
   photo: rock.jpg
-  info: Master student
-  email: m.ortego.larrazabal@umail.leidenuniv.nl
-  number_educ: 0
-  education1:
+  info: MSc Student in Data Science, started March 2024
+  email: heejung.shim@unimelb.edu.au
+  number_educ: 1
+  education1: "Project: Machine learning and statistics for spatial transcriptomics"
 
-- name: Tessa Van der Ent
+- name: Zeynep March
   photo: rock.jpg
-  info: Master student
-  email: m.ortego.larrazabal@umail.leidenuniv.nl
-  number_educ: 0
-  education1:
+  info: MSc Student in Bioinformatics, started July 2024
+  email: heejung.shim@unimelb.edu.au
+  number_educ: 1
+  education1: "Project: Computational methods for Nanopore data analysis"
 
+- name: Christiaan Van Aardt
+  photo: rock.jpg
+  info: Undergraduate, started December 2024
+  email: heejung.shim@unimelb.edu.au
+  number_educ: 1
+  education1: "Project: Generalisability of spatial features"
 
+- name: Ngoc Minh Vu
+  photo: rock.jpg
+  info: Undergraduate, started February 2025
+  email: heejung.shim@unimelb.edu.au
+  number_educ: 1
+  education1: "Project: CRISPR-modified single-cell isoform expression using nanopore RNA sequencing"
