@@ -1,0 +1,39 @@
+<div class="col">
+  {% assign member_photo_path = member.photo | prepend: "assets/img/team/" %}
+  <div class="card h-100 hoverable p-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        {% if member.photo %}
+          {%
+            include figure.liquid
+            loading="eager"
+            path=member_photo_path
+            sizes="200px"
+            class="img-fluid rounded z-depth-1"
+            alt=member.name
+          %}
+        {% endif %}
+      </div>
+      <div class="col-md-8">
+        <div class="card-body py-0">
+          <h5 class="card-title mb-1">{{ member.name }}</h5>
+          {% if member.duration %}
+            <p class="card-text mb-1"><em>{{ member.duration }}</em></p>
+            <p class="card-text">{{ member.info }}</p>
+          {% else %}
+            <p class="card-text mb-1">{{ member.info }}</p>
+            {% if member.number_educ and member.number_educ > 0 %}
+              <ul class="mb-0 ps-3">
+                {% if member.education1 %}<li>{{ member.education1 | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endif %}
+                {% if member.education2 %}<li>{{ member.education2 | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endif %}
+                {% if member.education3 %}<li>{{ member.education3 | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endif %}
+                {% if member.education4 %}<li>{{ member.education4 | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endif %}
+                {% if member.education5 %}<li>{{ member.education5 | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endif %}
+              </ul>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

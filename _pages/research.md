@@ -1,12 +1,11 @@
 ---
-title: "Heejung Shim Lab - Research"
-layout: textlay
-excerpt: "Heejung Shim Lab -- Research"
-sitemap: false
+layout: page
+title: research
 permalink: /research/
+description: Statistical methods and computational tools for genomic data analysis.
+nav: true
+nav_order: 3
 ---
-
-# Research
 
 Our group develops statistical methods and computational tools for applications to a wide range of biological questions. We emphasize close communication with biologists to ensure our approaches address real biological questions while respecting the properties of the data.
 

@@ -1,202 +1,55 @@
 ---
-title: "Heejung Shim Lab - Team"
-layout: gridlay
-excerpt: "Heejung Shim Lab: Team members"
-sitemap: false
+layout: page
+title: team
 permalink: /team/
+description: Group members of the Heejung Shim Lab.
+nav: true
+nav_order: 2
 ---
 
-# Group Members
+<p><strong>We are looking for new PhD students, Postdocs, and Master/undergraduate students to join the team</strong> (<a href="{{ '/vacancies/' | relative_url }}">see openings</a>)!</p>
 
- **We are  looking for new PhD students, Postdocs, and Master/undergraduate students to join the team** [(see openings)]({{ site.url }}{{ site.baseurl }}/vacancies) **!**
+<p>Jump to <a href="#staff">current members</a>, <a href="#students">master and undergraduate students</a>, <a href="#alumni">alumni</a>.</p>
 
+## Staff & PhD Students {#staff}
+<div class="row row-cols-1 row-cols-md-2">
+  {% for member in site.data.team_members %}
+    {% include team_card.liquid member=member %}
+  {% endfor %}
+</div>
 
-Jump to [current members](#staff), [master and undergraduate students](#master-and-bachelor-students), [alumni](#alumni).
+## Master and Undergraduate Students {#students}
+<div class="row row-cols-1 row-cols-md-2">
+  {% for member in site.data.students %}
+    {% include team_card.liquid member=member %}
+  {% endfor %}
+</div>
 
-## Staff
-{% assign number_printed = 0 %}
-{% for member in site.data.team_members %}
+## Alumni {#alumni}
+<div class="row row-cols-1 row-cols-md-2">
+  {% for member in site.data.alumni_members %}
+    {% include team_card.liquid member=member %}
+  {% endfor %}
+</div>
 
-{% assign even_odd = number_printed | modulo: 2 %}
-
-{% if even_odd == 0 %}
+### Former Visitors, Bachelor & Master Students
 <div class="row">
-{% endif %}
-
-<div class="col-sm-6 clearfix">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/teampic/{{ member.photo }}" class="img-responsive" width="25%" style="float: left" />
-  <h4>{{ member.name }}</h4>
-  <i>{{ member.info }} <!--<br>email: <{{ member.email }}></i> -->
-  <ul style="overflow: hidden">
-
-  {% if member.number_educ == 1 %}
-  <li> {{ member.education1 }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 2 %}
-  <li> {{ member.education1 | markdownify}} </li>
-  <li> {{ member.education2 | markdownify}} </li>
-  {% endif %}
-
-  {% if member.number_educ == 3 %}
-  <li> {{ member.education1 }} </li>
-  <li> {{ member.education2 }} </li>
-  <li> {{ member.education3 }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 4 %}
-  <li> {{ member.education1 }} </li>
-  <li> {{ member.education2 }} </li>
-  <li> {{ member.education3 }} </li>
-  <li> {{ member.education4 }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 5 %}
-  <li> {{ member.education1 }} </li>
-  <li> {{ member.education2 }} </li>
-  <li> {{ member.education3 }} </li>
-  <li> {{ member.education4 }} </li>
-  <li> {{ member.education5 }} </li>
-  {% endif %}
-
-  </ul>
-</div>
-
-{% assign number_printed = number_printed | plus: 1 %}
-
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
-{% endfor %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
-
-
-
-## Master and Bachelor Students
-{% assign number_printed = 0 %}
-{% for member in site.data.students %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-
-{% if even_odd == 0 %}
-<div class="row">
-{% endif %}
-
-<div class="col-sm-6 clearfix">
-  <h4>{{ member.name }}</h4>
-  <i>{{ member.info }} <!-- <br>email: <{{ member.email }}></i> -->
-  <ul style="overflow: hidden">
-
-  {% if member.number_educ == 1 %}
-  <li> {{ member.education1 }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 2 %}
-  <li> {{ member.education1 }} </li>
-  <li> {{ member.education2 }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 3 %}
-  <li> {{ member.education1 }} </li>
-  <li> {{ member.education2 }} </li>
-  <li> {{ member.education3 }} </li>
-  {% endif %}
-
-  {% if member.number_educ == 4 %}
-  <li> {{ member.education1 }} </li>
-  <li> {{ member.education2 }} </li>
-  <li> {{ member.education3 }} </li>
-  <li> {{ member.education4 }} </li>
-  {% endif %}
-
-  </ul>
-</div>
-
-{% assign number_printed = number_printed | plus: 1 %}
-
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
-{% endfor %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
-
-## Alumni
-
-{% assign number_printed = 0 %}
-{% for member in site.data.alumni_members %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-
-{% if even_odd == 0 %}
-<div class="row">
-{% endif %}
-
-<div class="col-sm-6 clearfix">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/teampic/{{ member.photo }}" class="img-responsive" width="25%" style="float: left" />
-  <h4>{{ member.name }}</h4>
-  <i>{{ member.duration }} <br> Role: {{ member.info }}</i>
-  <ul style="overflow: hidden">
-
-  </ul>
-</div>
-
-{% assign number_printed = number_printed | plus: 1 %}
-
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
-{% endfor %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
-## Former visitors, BSc/ MSc students
-<div class="row">
-
-<div class="col-sm-4 clearfix">
-<h4>Visitors</h4>
-{% for member in site.data.alumni_visitors %}
-{{ member.name }}
-{% endfor %}
-</div>
-
-<div class="col-sm-4 clearfix">
-<h4>Master students</h4>
-{% for member in site.data.alumni_msc %}
-{{ member.name }}
-{% endfor %}
-</div>
-
-<div class="col-sm-4 clearfix">
-<h4>Bachelor Students</h4>
-{% for member in site.data.alumni_bsc %}
-{{ member.name }}
-{% endfor %}
-</div>
-
-</div>
-
-
-## Former Students at Purdue University
-<div class="row">
-<div class="col-sm-4 clearfix">
-{% for member in site.data.alumni_visitors %}
-{{ member.name }}
-{% endfor %}
-</div>
+  <div class="col-md-4">
+    <h5>Visitors</h5>
+    <ul>
+      {% for member in site.data.alumni_visitors %}<li>{{ member.name }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h5>Master Students</h5>
+    <ul>
+      {% for member in site.data.alumni_msc %}<li>{{ member.name }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h5>Bachelor Students</h5>
+    <ul>
+      {% for member in site.data.alumni_bsc %}<li>{{ member.name }}</li>{% endfor %}
+    </ul>
+  </div>
 </div>
